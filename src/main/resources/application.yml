@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        producer-out-0:
+          destination: individual
+        producer-out-1:
+          destination: business
+
+kafka-constants:
+  topics:
+    individual: producer-out-0
+    business: producer-out-1
+
+server:
+  port: 8083
