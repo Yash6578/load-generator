@@ -3,7 +3,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: 13.235.79.176:9092
       bindings:
         producer-out-0:
           destination: individual
