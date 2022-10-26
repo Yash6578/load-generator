@@ -1,14 +1,20 @@
 spring:
   cloud:
+    function:
+      definition: generateOnKafkaTopicIndividual;generateOnKafkaTopicBusiness
     stream:
       kafka:
         binder:
-          brokers: 13.235.79.176:9092
+          brokers: kafka-machine-ip:9092
       bindings:
         producer-out-0:
           destination: individual
         producer-out-1:
           destination: business
+        generateOnKafkaTopicBusiness-out-0:
+          destination: business
+        generateOnKafkaTopicIndividual-out-0:
+          destination: individual
 
 kafka-constants:
   topics:

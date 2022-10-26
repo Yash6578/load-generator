@@ -31,7 +31,7 @@ public class ProducerController {
     }
 
     @GetMapping("/generate/random/kafka/{n}")
-    ResponseEntity<String> produceRandomProfileToKafka(@PathVariable Integer n) {
+    public ResponseEntity<String> produceRandomProfileToKafka(@PathVariable Integer n) {
         List<Profile> profileList = profileService.generateRandomProfiles(n);
         boolean status = kafkaService.send(profileList);
 
@@ -42,7 +42,7 @@ public class ProducerController {
     }
 
     @GetMapping("/generate/random/rest/{n}")
-    ResponseEntity<String> produceRandomProfileToClientFilterApi(@PathVariable Integer n) {
+    public ResponseEntity<String> produceRandomProfileToClientFilterApi(@PathVariable Integer n) {
         List<Profile> profileList = profileService.generateRandomProfiles(n);
 
         profileList.forEach(filterClient::filter);
