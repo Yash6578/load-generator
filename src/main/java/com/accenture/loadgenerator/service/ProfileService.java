@@ -1,11 +1,12 @@
 package com.accenture.loadgenerator.service;
 
-import com.accenture.loadgenerator.bean.Profile;
+
+import com.accenture.contractlibrary.models.Profile;
 
 import java.util.List;
 
 public interface ProfileService {
     Profile generateRandomProfile();
 
-    List<Profile> generateRandomProfiles(Integer n);
+    List<Profile> generateRandomProfiles(Long n);
 }

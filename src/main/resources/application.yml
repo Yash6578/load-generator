@@ -5,7 +5,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: kafka-machine-ip:9092
+          brokers: 13.235.73.172:9092
       bindings:
         producer-out-0:
           destination: individual

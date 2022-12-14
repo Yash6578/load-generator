@@ -1,6 +1,6 @@
 package com.accenture.loadgenerator.service.impl;
 
-import com.accenture.loadgenerator.bean.Profile;
+import com.accenture.contractlibrary.models.Profile;
 import com.accenture.loadgenerator.properties.KafkaProperties;
 import com.accenture.loadgenerator.service.KafkaService;
 import lombok.extern.slf4j.Slf4j;

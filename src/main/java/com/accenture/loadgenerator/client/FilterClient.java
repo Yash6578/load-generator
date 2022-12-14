@@ -1,6 +1,6 @@
 package com.accenture.loadgenerator.client;
 
-import com.accenture.loadgenerator.bean.Profile;
+import com.accenture.contractlibrary.models.Profile;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

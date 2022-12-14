@@ -1,8 +1,8 @@
 package com.accenture.loadgenerator.service.impl;
 
-import com.accenture.loadgenerator.bean.Address;
-import com.accenture.loadgenerator.bean.Name;
-import com.accenture.loadgenerator.bean.Profile;
+import com.accenture.contractlibrary.models.Address;
+import com.accenture.contractlibrary.models.Name;
+import com.accenture.contractlibrary.models.Profile;
 import com.accenture.loadgenerator.service.ProfileService;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
@@ -21,22 +21,20 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public Profile generateRandomProfile() {
 
-        String type[] = {"individual", "business"};
+        String[] type = {"individual", "business"};
         int typeIndex = getRandomInt(0, 2);
 
-        Profile profile = Profile.builder()
+        return Profile.builder()
                 .id(faker.bothify("####?????#####??????"))
                 .type(type[typeIndex])
                 .nameList(getRandomNameList())
                 .addressList(getRandomAddressList())
                 .eventTime(ZonedDateTime.now().plusMinutes(getRandomInt(0, 1000)))
                 .build();
-
-        return profile;
     }
 
     @Override
-    public List<Profile> generateRandomProfiles(Integer n) {
+    public List<Profile> generateRandomProfiles(Long n) {
         List<Profile> profileList = new ArrayList<>();
 
         for(int i = 0;i < n;i++)
@@ -56,6 +54,7 @@ public class ProfileServiceImpl implements ProfileService {
                     .firstName(faker.letterify("?????"))
                     .lastName(faker.letterify("???????"))
                     .lastActive(ZonedDateTime.now().plusMinutes(getRandomInt(0, 1000)))
+                    .type("Name")
                     .build();
 
             nameList.add(name);
@@ -86,6 +85,7 @@ public class ProfileServiceImpl implements ProfileService {
                     .line9(faker.bothify("### ???????????? ??????"))
                     .line10(faker.bothify("### ???????????? ??????"))
                     .lastActive(ZonedDateTime.now().plusMinutes(getRandomInt(0, 1000)))
+                    .type("Address")
                     .build();
 
             addressList.add(address);

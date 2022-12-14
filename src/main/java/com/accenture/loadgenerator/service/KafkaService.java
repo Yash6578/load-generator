@@ -1,6 +1,6 @@
 package com.accenture.loadgenerator.service;
 
-import com.accenture.loadgenerator.bean.Profile;
+import com.accenture.contractlibrary.models.Profile;
 
 import java.util.List;
 

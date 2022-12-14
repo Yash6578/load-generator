@@ -1,6 +1,6 @@
 package com.accenture.loadgenerator.config;
 
-import com.accenture.loadgenerator.bean.Profile;
+import com.accenture.contractlibrary.models.Profile;
 import com.accenture.loadgenerator.service.ProfileService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
